@@ -10,6 +10,7 @@ public abstract class Joueurs {
 		this.reponse = reponse;
 	}
 	
+	
 	//Constructor par defaut
 	public Joueurs() {};
 	
