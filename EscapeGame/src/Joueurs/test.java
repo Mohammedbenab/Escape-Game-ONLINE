@@ -38,6 +38,11 @@ public class test {
 		System.out.println();
 		
 		}
+		
+		for (Menu choix : Menu.values()) {
+			System.out.println(choix.getOption() + " : " + choix.name());
+		}
+		
 	}
 
 }
