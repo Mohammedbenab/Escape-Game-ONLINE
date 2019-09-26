@@ -1,15 +1,19 @@
 package Joueurs;
 
 public enum Menu {
-	Quitter(0), Challenger(1), Defenseur(2), Duel(3);
+	Quitter("0"), Challenger("1"), Defenseur("2"), Duel("3");
 	
-	private int option;
+	private String option;
 	
-	Menu(int option){
+	Menu(String option){
 		this.option = option;
 	}
 	
-	public int getOption() {
+	public String afficherMenu() {
+		return getOption() + " : " + name();
+	}
+	
+	public String getOption() {
 		return option;
 	}
 

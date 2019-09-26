@@ -1,47 +1,34 @@
 package Joueurs;
-import java.util.Random;
-//import java.util.Scanner;
 
 public class test {
 
 	public static void main(String[] args) {
-		/*System.out.println("saisir une combinaison: ");
-		Scanner test1 = new Scanner(System.in);
-		int combinaison = test1.nextInt();
-		if (combinaison >= 1000 && combinaison < 10000)
-		System.out.println(combinaison);
-		else {
-			Scanner test2 = new Scanner(System.in);
-			int combinaison2 = test2.nextInt();
-			System.out.println(combinaison2);
 
-		}*/
-		Random rnd = new Random();
-		System.out.println("nombre rendom compris entre un intervalle");
-		int nombre = rnd.nextInt(9998 + 1) + 1000;
-		System.out.println(nombre);
-		System.out.println(nombre%1000);
+		/*
+		 * nbEssai représente le nombre d'essaie qu'il sera autorisé a une joureur pour trouver la combinaison
+		 * de l'adverssaire.
+		 */
+		int nbEssai = 0;
+		char option = ' ';
 		
-		int[] defense = {1,2,3,3,2,5,58};
-		int[] attaque = {45,5,9,8,15,8,72};
+		while (nbEssai <= 5) {
 		
-		int[][] tab = {defense,attaque};
+			for (Menu choix : Menu.values()) {
+				System.out.println(choix.getOption() + " : " + choix.name());
+			}
+			if (option == '0') {
+				System.out.println("Au revoir !");
+				break;
+			}
+			
+			else if(option == '1') {
+				System.out.println("Vous venez de choisir le mode Challenger");
+				System.out.println("Vous etes en position d'attaque, et vous devez trouver la combianison de 4chiffre");
 				
-		for (int i = 0; i < tab.length; i++) {
-			for (int j = 0; j < tab[i].length; j++) {
-			if (i < j) {
-				System.out.println("+");
-			}else if (i > j){
-				System.out.println("-");
-			}else System.out.println("=");
-		}
-		System.out.println();
-		
+			}
 		}
 		
-		for (Menu choix : Menu.values()) {
-			System.out.println(choix.getOption() + " : " + choix.name());
-		}
+		
 		
 	}
 
