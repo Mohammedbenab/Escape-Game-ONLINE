@@ -25,7 +25,7 @@ public abstract class Joueurs {
 	}
 	
 	//
-	public void setStrategie(Proposition proposition) {
+	public void setProposition(Proposition proposition) {
 		this.proposition = proposition;
 	}
 	

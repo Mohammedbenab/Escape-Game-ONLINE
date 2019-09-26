@@ -1,5 +1,7 @@
 package Joueurs;
 
+import com.sdz.modeJeu.SaisiCombi;
+
 public class test {
 
 	public static void main(String[] args) {
@@ -23,7 +25,13 @@ public class test {
 			
 			else if(option == '1') {
 				System.out.println("Vous venez de choisir le mode Challenger");
-				System.out.println("Vous etes en position d'attaque, et vous devez trouver la combianison de 4chiffre");
+				System.out.println("Vous etes en position d'attaque, et vous devez trouver la combianison de 4 chiffres");
+				
+				Joueurs attaquant = new Attaquant();
+				Joueurs defenseur = new Defenseur();
+				
+				attaquant.setProposition(new SaisiCombi());
+				defenseur.
 				
 			}
 		}
