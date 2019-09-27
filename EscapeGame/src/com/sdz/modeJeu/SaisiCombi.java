@@ -3,14 +3,18 @@ package com.sdz.modeJeu;
 import java.util.Scanner;
 
 public class SaisiCombi implements Proposition{
-	public void combinaison() {
-		Scanner combiSaisi = new Scanner(System.in);
+
+	@Override
+	public void combinaison(int combinaison) {
+		System.out.println("Choisir une combinaison");
+		Scanner sc = new Scanner(System.in);
 		try {
-			int combinaison = combiSaisi.nextInt();
+			combinaison = sc.nextInt();
 			System.out.println("Proposition " + combinaison + " ->");
 		}finally {
-			combiSaisi.close();
+			sc.close();
 		}
+		
 	}
 
 }

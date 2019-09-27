@@ -16,12 +16,12 @@ public abstract class Joueurs {
 	
 	// Méthode de défense
 	public void votreProposition() {
-		proposition.combinaison();
+		proposition.combinaison(0);
 	}
 	
 	//Méthode de réponse
 	public void votreReponse() {
-		reponse.repondre();
+		reponse.repondre(null, null);
 	}
 	
 	//
