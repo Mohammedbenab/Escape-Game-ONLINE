@@ -1,6 +1,9 @@
 package Joueurs;
 import com.sdz.modeJeu.*;
 public abstract class Joueurs {
+	protected int combinaison;
+	protected int attaque;
+	protected int defense;
 	
 	protected Proposition proposition = new AucuneCombi();
 	protected Reponse reponse = new ReponseNull();
@@ -15,13 +18,13 @@ public abstract class Joueurs {
 	public Joueurs() {};
 	
 	// Méthode de défense
-	public void votreProposition() {
-		proposition.combinaison(0);
+	public void votreProposition(Proposition proposition) {
+		proposition.combinaison(combinaison);
 	}
 	
 	//Méthode de réponse
-	public void votreReponse() {
-		reponse.repondre(null, null);
+	public void votreReponse(Reponse reponse) {
+		reponse.repondre(attaque, defense);
 	}
 	
 	//

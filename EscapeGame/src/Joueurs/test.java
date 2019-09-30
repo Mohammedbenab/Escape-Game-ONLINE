@@ -1,15 +1,22 @@
 package Joueurs;
 
-import com.sdz.modeJeu.SaisiCombi;
+import com.sdz.modeJeu.*;
 
 public class test {
 
 	public static void main(String[] args) {
 
-		Joueurs amine = new Attaquant();
+		Joueurs joueur1 = new Attaquant();
+		Joueurs ordi = new Defenseur();
+	
+		SaisiCombi combinaison = new SaisiCombi();
+		joueur1.votreProposition(combinaison);
+		RandomCombi combinaison1 = new RandomCombi();
+		ordi.votreProposition(combinaison1);
+	
 		
-		amine.setProposition(new SaisiCombi());
-		amine.votreProposition();
+
+				
 		
 		
 	}
