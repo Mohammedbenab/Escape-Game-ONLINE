@@ -1,6 +1,4 @@
-package Joueurs;
-
-import com.sdz.modeJeu.ModeJeu;
+package com.sdz.modeJeu;
 
 public class Duel implements ModeJeu{
 
