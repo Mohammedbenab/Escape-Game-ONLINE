@@ -58,8 +58,8 @@ public abstract class Joueurs {
 	}
 	
 	// Méthode de défense
-	public void votreProposition(Proposition proposition) {
-		proposition.combinaison(combinaison);
+	public int votreProposition(Proposition proposition) {
+		return proposition.combinaison(combinaison);
 	}
 	
 	//Méthode de réponse
