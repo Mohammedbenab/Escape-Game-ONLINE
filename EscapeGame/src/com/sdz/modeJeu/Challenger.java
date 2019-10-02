@@ -6,13 +6,14 @@ public class Challenger implements ModeJeu{
 
 	@Override
 	public void modeJeu() {
-		Joueurs attaquant = new Attaquant();
-		Joueurs defenseur = new Defenseur();
-		defenseur.votreProposition(new RandomCombi());
+		Joueurs joueur = new Attaquant();
+		Joueurs ordi = new Defenseur();
+		ordi.votreProposition(new RandomCombi());
 		int nbrEssai = 0;
 		
 		while(nbrEssai <= 5) {
-			attaquant.votreProposition(new SaisiCombi());
+			joueur.votreProposition(new SaisiCombi());
+			
 			
 			
 		}
