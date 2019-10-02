@@ -75,8 +75,19 @@ public class exoTest {
 	       System.out.println();
 	       String chaineMini = chaine.toLowerCase();
 	       System.out.print(chaineMini);
+
+	    	   int tab4[]= {25, 45, 12};
+	    	   int somme = 0;
+	       for (int i = 0; i < tab4.length; i++) {
+	    	   somme += tab4[i] * 2;
+	       }
+	       System.out.println();
+	    	   if (somme < 100 ) {
+	    		   System.out.println("true");
+	    	   }else System.out.println("false");;
 	       
-		}     
+	       }
+    
 		
 	}
 
