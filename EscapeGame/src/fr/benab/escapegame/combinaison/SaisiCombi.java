@@ -1,6 +1,8 @@
-package com.sdz.modeJeu;
+package fr.benab.escapegame.combinaison;
 
 import java.util.Scanner;
+
+import fr.benab.escapegame.mode.Proposition;
 
 public class SaisiCombi implements Proposition{
 

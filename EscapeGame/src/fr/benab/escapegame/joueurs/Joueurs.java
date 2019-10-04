@@ -1,12 +1,15 @@
-package Joueurs;
+package fr.benab.escapegame.joueurs;
 import java.util.Scanner;
 
-import com.sdz.modeJeu.*;
+import fr.benab.escapegame.combinaison.AucuneCombi;
+import fr.benab.escapegame.mode.*;
+import fr.benab.escapegame.proposition.*;
+
 public abstract class Joueurs {
 	protected int combinaison;
 	
 	protected Proposition proposition = new AucuneCombi();
-	protected ModeJeu modejeu = new Quitter();
+	protected ModeJeu modejeu;
 	
 	public Joueurs(Proposition proposition, ModeJeu modejeu) {
 		this.proposition = proposition;
@@ -22,7 +25,6 @@ public abstract class Joueurs {
 		System.out.println("1: Mode Challeger");
 		System.out.println("2: Mode Defense");
 		System.out.println("3: Mode Duel");
-		
 	}
 	/*
 	 * Les possibilités du menu

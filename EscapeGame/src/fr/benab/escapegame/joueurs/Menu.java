@@ -1,4 +1,4 @@
-package Joueurs;
+package fr.benab.escapegame.joueurs;
 
 public enum Menu {
 	Quitter("0"), Challenger("1"), Defenseur("2"), Duel("3");

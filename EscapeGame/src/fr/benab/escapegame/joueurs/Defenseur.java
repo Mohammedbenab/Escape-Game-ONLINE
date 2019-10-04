@@ -1,5 +1,5 @@
-package Joueurs;
-import com.sdz.modeJeu.*;
+package fr.benab.escapegame.joueurs;
+import fr.benab.escapegame.mode.*;
 
 public class Defenseur extends Joueurs{
 	public Defenseur() {}
