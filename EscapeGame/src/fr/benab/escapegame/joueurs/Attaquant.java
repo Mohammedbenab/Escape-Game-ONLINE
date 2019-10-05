@@ -1,6 +1,6 @@
 package fr.benab.escapegame.joueurs;
-import fr.benab.escapegame.mode.ModeJeu;
-import fr.benab.escapegame.mode.Proposition;
+import fr.benab.escapegame.imode.ModeJeu;
+import fr.benab.escapegame.imode.Proposition;
 
 public class Attaquant extends Joueurs{
 	public Attaquant() {}

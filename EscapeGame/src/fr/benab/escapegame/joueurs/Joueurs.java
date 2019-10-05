@@ -2,7 +2,7 @@ package fr.benab.escapegame.joueurs;
 import java.util.Scanner;
 
 import fr.benab.escapegame.combinaison.AucuneCombi;
-import fr.benab.escapegame.mode.*;
+import fr.benab.escapegame.imode.*;
 import fr.benab.escapegame.proposition.*;
 
 public abstract class Joueurs {

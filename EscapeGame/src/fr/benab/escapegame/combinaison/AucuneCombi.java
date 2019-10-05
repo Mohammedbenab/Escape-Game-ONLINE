@@ -1,6 +1,6 @@
 package fr.benab.escapegame.combinaison;
 
-import fr.benab.escapegame.mode.Proposition;
+import fr.benab.escapegame.imode.Proposition;
 
 public class AucuneCombi implements Proposition{
 	public int combinaison(int combinaison) {

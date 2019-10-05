@@ -2,7 +2,7 @@ package fr.benab.escapegame.combinaison;
 
 import java.util.Random;
 
-import fr.benab.escapegame.mode.Proposition;
+import fr.benab.escapegame.imode.Proposition;
 
 public class RandomCombi implements Proposition{
 

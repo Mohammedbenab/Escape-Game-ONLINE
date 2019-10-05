@@ -1,4 +1,4 @@
-package fr.benab.escapegame.mode;
+package fr.benab.escapegame.imode;
 
 public interface Proposition {
 	public abstract int combinaison(int combinaison);

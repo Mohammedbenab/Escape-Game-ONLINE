@@ -1,6 +1,6 @@
 package fr.benab.escapegame.proposition;
 
-import fr.benab.escapegame.mode.ModeJeu;
+import fr.benab.escapegame.imode.ModeJeu;
 
 public class Duel implements ModeJeu{
 
