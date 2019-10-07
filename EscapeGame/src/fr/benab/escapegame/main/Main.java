@@ -10,26 +10,26 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		String jouer = "O";
-		Joueurs attaquant = new Attaquant();
+		String reponse = "O";
+		String jouer;
+		//Joueurs attaquant = new Attaquant();
 		
-		while (jouer == "O" || jouer == "o" || jouer == "Oui" || jouer == "oui") {
+		while (reponse == "O") {
 			
-			jouer = "";
-			
-			//Joueurs attaquant = new Attaquant();
+			reponse =null;
+			jouer = null;
+			Joueurs attaquant = new Attaquant();
 			attaquant.menuChoixUtilisateur();
 			
 			System.out.println("Souttez-vous rejouer ? O/N");
 			Scanner sc = new Scanner(System.in);
-			String reponse = sc.nextLine();
+			jouer = sc.nextLine();
 			
-			if (reponse == jouer) {
-				jouer = "O";
+			if (jouer == "O" || jouer == "o" || jouer == "Oui" || jouer == "oui") {
+				reponse = "O";
 			}else {
 				System.out.println("Merci d'avoir participer, et à bientôt !");
-				System.out.println(reponse + jouer);
-				jouer = "N";
+				reponse = "N";
 			}
 		}
 	}
