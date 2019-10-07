@@ -5,6 +5,9 @@ import fr.benab.escapegame.combinaison.SaisiCombi;
 import fr.benab.escapegame.imode.ModeJeu;
 import fr.benab.escapegame.joueurs.*;
 
+import java.util.Arrays;
+
+
 public class Challenger implements ModeJeu{
 
 	@Override
@@ -22,12 +25,12 @@ public class Challenger implements ModeJeu{
 		
 		int nbrEssai = 5;
 		int combiAttaque;
-		String resultat = "";
+		String resultat = null;
 		
 		
 		while(nbrEssai > 0) {
 			
-				//resultat ="";
+				resultat ="";
 				combiAttaque = 0;
 				
 				while(combiAttaque == 0) {
@@ -41,7 +44,8 @@ public class Challenger implements ModeJeu{
 						combiAttaque = 0;
 					}
 				}
-					
+				
+				
 				int i =0;
 				while (i < tabAttaq.length) {
 					if (tabAttaq[i] > tabDefense[i]) {
@@ -51,9 +55,9 @@ public class Challenger implements ModeJeu{
 					}else resultat += "=";
 					i++;
 				}
-				if (tabAttaq.equals(tabDefense)) {
-					System.out.println("Felicitation vous avec trouvez la combinaison: " + tabDefense);
-					System.exit (0);
+				if (combiAttaque == combiDefense) {
+					System.out.println("Felicitation vous avec trouvez la combinaison: " + combiDefense);
+					nbrEssai = 0;
 				}
 				System.out.println("Proposition :" + combiAttaque + " -> Réponse :" + resultat);
 				
