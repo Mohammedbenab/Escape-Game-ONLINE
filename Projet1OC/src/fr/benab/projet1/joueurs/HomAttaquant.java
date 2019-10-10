@@ -6,11 +6,11 @@ public class HomAttaquant extends Attaquant{
 
 	@Override
 	public int proposition() {
+		
 		System.out.println("Choisir une combinaison");
 		Scanner sc = new Scanner(System.in);
-
-			int combinaison = sc.nextInt();
-			return combinaison;
+		int combinaison = sc.nextInt();
+		return combinaison;
 		
 	}
 
