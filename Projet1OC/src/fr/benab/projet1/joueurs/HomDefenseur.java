@@ -8,4 +8,10 @@ public class HomDefenseur extends Defenseur{
 		
 	}
 
+	@Override
+	public int combiSecret() {
+		return 0;
+		
+	}
+
 }

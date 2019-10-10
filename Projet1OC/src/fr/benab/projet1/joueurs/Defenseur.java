@@ -3,4 +3,5 @@ package fr.benab.projet1.joueurs;
 public abstract class Defenseur {
 	
 	public abstract String reponse();
+	public abstract int combiSecret();
 }

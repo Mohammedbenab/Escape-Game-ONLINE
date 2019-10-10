@@ -8,4 +8,10 @@ public class OrdiDefenseur extends Defenseur{
 
 	}
 
+	@Override
+	public int combiSecret() {
+		return 0;
+
+	}
+
 }
