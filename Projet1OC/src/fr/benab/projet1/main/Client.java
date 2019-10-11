@@ -1,4 +1,4 @@
-package fr.benab.projet1.client;
+package fr.benab.projet1.main;
 
 public class Client {
 
