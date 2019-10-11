@@ -1,6 +1,6 @@
 package fr.benab.projet1.gamer;
 
-public class GamerMachine implements Attaquant, Defenseur{
+public class GamerMachine implements IAttack, IDefend{
 
 
 	@Override

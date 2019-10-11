@@ -2,7 +2,7 @@ package fr.benab.projet1.gamer;
 
 import java.util.Scanner;
 
-public class GamerMen implements Attaquant, Defenseur{
+public class GamerMen implements IAttack, IDefend{
 
 	@Override
 	public String proposition() {

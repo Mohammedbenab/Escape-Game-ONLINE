@@ -1,6 +1,6 @@
 package fr.benab.projet1.gamer;
 
-public interface Attaquant {
+public interface IAttack {
 	
 	public abstract String proposition();
 

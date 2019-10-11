@@ -1,6 +1,6 @@
 package fr.benab.projet1.gamer;
 
-public interface Defenseur {
+public interface IDefend {
 	
 	public abstract String combiSecret();
 }
