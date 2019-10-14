@@ -1,6 +1,6 @@
 package fr.benab.projet1.creatgamer;
 
-public class GamerMachine implements ICreatGamer{
+public class GamerMachine implements ICreatGame{
 
 	@Override
 	public GamerMachine getGamerMachine() {
