@@ -27,7 +27,7 @@ public class Menu {
 	public void choixMenu(int nbr) {
 		if (nbr == 0) {
 			System.out.println("Vous avez choisi de quitter le jeu");
-			this.yourGameMode(new Quitter());
+			this.yourGameMode(new Exit());
 			System.exit (0);
 		}else if (nbr == 1) {
 			System.out.println("Vous avez choisi le mode Challenger");
