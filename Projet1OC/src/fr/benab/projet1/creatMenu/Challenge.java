@@ -20,7 +20,6 @@ public class Challenge implements GameMode{
 			
 			combAtt = gamerMen.proposition(reponse);
 			reponse = "";
-			System.out.println("Reponse avant traitement : " + reponse);
 			
 			int i = 0;
 			while (i < combAtt.length()) {
@@ -28,13 +27,10 @@ public class Challenge implements GameMode{
 					reponse += "-";
 				}else if (Integer.valueOf(combAtt.charAt(i)) < Integer.valueOf(combiDef.charAt(i))) {
 					reponse += "+";
-				}else if(Integer.valueOf(combAtt.charAt(i)) == Integer.valueOf(combiDef.charAt(i))) {
-					reponse += "=";
-				}
+				}else  reponse += "=";
 				i++;
 			}
-			System.out.println("Reponse apres traitement " + reponse);
-			System.out.println("Proposition : " + combiDef +" Reponse : " + reponse + " "+combAtt);
+			System.out.println("Proposition : " + combAtt +" Reponse : " + reponse);
 			nbrEssai++;
 		}
 
