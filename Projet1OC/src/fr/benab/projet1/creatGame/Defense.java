@@ -1,4 +1,4 @@
-package fr.benab.projet1.creatMenu;
+package fr.benab.projet1.creatGame;
 
 public class Defense implements GameMode{
 

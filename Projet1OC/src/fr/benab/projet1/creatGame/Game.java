@@ -1,15 +1,31 @@
-package fr.benab.projet1.creatMenu;
+package fr.benab.projet1.creatGame;
 
 import java.util.Scanner;
 
 
-public class Menu {
+public class Game {
 	
 	protected GameMode gameMode;
 	
 	public void yourGameMode(GameMode gameMode) {
 		gameMode.gameMode();
 	}
+	
+	public void Reponse (String gamerAtt, String gamerDef) {
+		String resultat = "";
+		
+		int i = 0;
+		while (i < gamerAtt.length()) {
+			if (gamerAtt.charAt(i) > gamerDef.charAt(i)) {
+				resultat += "-";
+			}else if (gamerAtt.charAt(i) < gamerDef.charAt(i)) {
+				resultat += "+";
+			}else resultat += "=";
+			i++;
+		}		
+		System.out.println(resultat);
+	}
+	
 	public void desplayMenu() {
 		System.out.println("0: Quitter le programme");
 		System.out.println("1: Mode Challeger");

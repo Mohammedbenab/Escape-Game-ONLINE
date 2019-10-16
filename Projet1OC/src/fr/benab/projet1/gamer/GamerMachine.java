@@ -8,12 +8,12 @@ public class GamerMachine implements IAttack, IDefend{
 	@Override
 	public String combiSecret() {
 		
-		int[]tab = new int[4];
-		String combiSecret;
-		for (int i = 0; i < tab.length; i++)  {  
-	    	tab[i] = (int) ((Math.random() * ( 9 - 0 )) + 0);
+		//int[]tab = new int[4];
+		String combiSecret = "";
+		for (int i = 0; i < 4; i++)  {  
+	    	combiSecret += Integer.toString((int) ((Math.random() * ( 9 - 0 )) + 0));
     	}
-		combiSecret = Arrays.toString(tab);
+		//combiSecret = Arrays.toString(tab);
 		return combiSecret;
 	}
 

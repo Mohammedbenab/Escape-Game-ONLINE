@@ -1,14 +1,16 @@
 package fr.benab.projet1.main;
 
-import fr.benab.projet1.creatMenu.Menu;
+import fr.benab.projet1.creatGame.Game;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		Menu menu = new Menu();
+		Game game = new Game();
 		
-		menu.menuChoicePlayer();
+		
+		game.menuChoicePlayer();
+
 		
 
 	}
