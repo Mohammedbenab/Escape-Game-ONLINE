@@ -21,17 +21,17 @@ public class Menu {
 		this.desplayMenu();
 		Scanner sc = new Scanner(System.in);
 		int nbr = sc.nextInt();
-		this.choixMenu(nbr);
+		this.choiceMenu(nbr);
 	}
 	
-	public void choixMenu(int nbr) {
+	public void choiceMenu(int nbr) {
 		if (nbr == 0) {
 			System.out.println("Vous avez choisi de quitter le jeu");
 			this.yourGameMode(new Exit());
 			System.exit (0);
 		}else if (nbr == 1) {
 			System.out.println("Vous avez choisi le mode Challenger");
-			this.yourGameMode(new Challenger());
+			this.yourGameMode(new Challenge());
 		}else if (nbr == 2) {
 			System.out.println("Vous avez choisi le mode Defense");
 			this.yourGameMode(new Defense());
@@ -40,7 +40,7 @@ public class Menu {
 			this.yourGameMode(new Duel());
 		}else {
 			System.out.println("Veuillez choisir une option dans le menu");
-			this.choixMenu(nbr);
+			this.choiceMenu(nbr);
 		}
 		
 	}

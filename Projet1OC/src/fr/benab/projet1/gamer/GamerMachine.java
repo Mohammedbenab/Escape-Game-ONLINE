@@ -1,7 +1,6 @@
 package fr.benab.projet1.gamer;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class GamerMachine implements IAttack, IDefend{
 
@@ -10,22 +9,22 @@ public class GamerMachine implements IAttack, IDefend{
 	public String combiSecret() {
 		
 		int[]tab = new int[4];
-		
+		String combiSecret;
 		for (int i = 0; i < tab.length; i++)  {  
 	    	tab[i] = (int) ((Math.random() * ( 9 - 0 )) + 0);
-	    	System.out.print(tab[i]);
     	}
-		String combi = Arrays.toString(tab);
-		return combi;
+		combiSecret = Arrays.toString(tab);
+		return combiSecret;
 	}
 
 	@Override
-	public String proposition(String[] reponse) {
+	public String proposition(String reponse) {
 		
 		String combinaison = null;
 		int[]tab = new int[4];
+		char [] reponseT = reponse.toCharArray();
 		
-		if (reponse == null && combinaison == null) {
+		if (reponseT == null) {
 
 			for (int i = 0; i < tab.length; i++)  {  
 		    	tab[i] = (int) ((Math.random() * ( 9 - 0 )) + 0);
@@ -33,12 +32,12 @@ public class GamerMachine implements IAttack, IDefend{
 	    	}
 		combinaison = Arrays.toString(tab);
 		
-		}else if (reponse != null) {
+		}else if (reponseT != null) {
 			
 			for(int j = 0; j < tab.length; j++) {
-				if (reponse[j] == "+"){
+				if (reponseT[j] == '+'){
 					tab[j] = (int) (Math.random() * ( 9 - tab[j] )) ;
-				}else if(reponse[j] == "-") {
+				}else if(reponseT[j] == '-') {
 					tab[j] = (int) (Math.random() * ( tab[j] - 0 ));
 				}else tab[j] = tab[j];
 			}
