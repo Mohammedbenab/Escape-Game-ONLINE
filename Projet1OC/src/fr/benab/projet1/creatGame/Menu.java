@@ -6,10 +6,16 @@ import java.util.Scanner;
 public class Menu {
 	
 	protected GameMode gameMode;
+	protected String reponse;
 	
 	public void yourGameMode(GameMode gameMode) {
 		gameMode.gameMode();
 	}
+	
+	public void setReponse(String reponse) {
+		this.reponse = reponse;
+	}
+	
 	
 	public void Reponse (String gamerAtt, String gamerDef) {
 		String resultat = "";
