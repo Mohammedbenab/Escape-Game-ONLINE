@@ -2,7 +2,9 @@ package fr.benab.projet1.gamer;
 
 import java.util.Scanner;
 
-public class GamerMen implements IAttack, IDefend{
+import fr.benab.projet1.creatGame.Builder;
+
+public class GamerMen extends Builder implements IAttack, IDefend{
 
 	@Override
 	public String combiSecret() {

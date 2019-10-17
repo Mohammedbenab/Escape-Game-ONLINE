@@ -2,7 +2,9 @@ package fr.benab.projet1.gamer;
 
 import java.util.Arrays;
 
-public class GamerMachine implements IAttack, IDefend{
+import fr.benab.projet1.creatGame.Builder;
+
+public class GamerMachine extends Builder implements IAttack, IDefend{
 
 
 	@Override
