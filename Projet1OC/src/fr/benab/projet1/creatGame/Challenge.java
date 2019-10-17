@@ -9,7 +9,7 @@ public class Challenge implements GameMode{
 	public void gameMode() {
 		
 		String reponse = null;
-		Game game = new Game();
+		Menu menu = new Menu();
 		GamerMen gamerMen = new GamerMen();
 		GamerMachine gamerMachine = new GamerMachine();
 		
@@ -20,7 +20,7 @@ public class Challenge implements GameMode{
 		
 		while (nbrEssai < 5) {
 			gAtt = gamerMen.proposition(reponse);
-			game.Reponse(gAtt, gDef);
+			menu.Reponse(gAtt, gDef);
 			if (gAtt.equals(gDef)) {
 				System.out.println("Felicitation vous avez trouver la combinaison : " + gDef);
 				System.exit(0);

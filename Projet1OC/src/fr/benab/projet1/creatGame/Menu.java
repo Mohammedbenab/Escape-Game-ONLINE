@@ -3,7 +3,7 @@ package fr.benab.projet1.creatGame;
 import java.util.Scanner;
 
 
-public class Game {
+public class Menu {
 	
 	protected GameMode gameMode;
 	
