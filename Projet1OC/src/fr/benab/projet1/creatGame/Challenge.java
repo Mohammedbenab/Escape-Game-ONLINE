@@ -9,9 +9,10 @@ public class Challenge implements GameMode{
 	public void gameMode() {
 		
 		String reponse = null;
-		Menu menu = new Menu();
-		GamerMen gamerMen = new GamerMen();
-		GamerMachine gamerMachine = new GamerMachine();
+		//Builder sMenu = new Menu();
+		Menu menu = (new BuildGame(new Menu())).creatMenu();
+		GamerMen gamerMen = (new BuildGame(new GamerMen())).creatGamerMen();
+		GamerMachine gamerMachine = (new BuildGame(new GamerMachine())).creatGamerMachine();
 		
 		int nbrEssai = 0;
 		String gAtt = null;
