@@ -23,17 +23,12 @@ public class Challenge implements GameMode{
 			menu.Reponse(gAtt, gDef);
 			if (gAtt.equals(gDef)) {
 				System.out.println("Felicitation vous avez trouver la combinaison : " + gDef);
-				System.exit(0);
-			}
-			nbrEssai++;
+				break;
+			}else if (!gAtt.equals(gDef) && nbrEssai == 5) {
+				System.out.println("Bien jouer, mais vous n'avez pas trouver la combinaison !");
+				break;
+			}else nbrEssai++;
 		}
 		
-		
-		
-	
-		
-	
-		
-
 	}
 }
