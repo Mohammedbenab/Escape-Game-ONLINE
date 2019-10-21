@@ -1,6 +1,5 @@
 package fr.benab.projet1.gamer;
 
-import java.util.Arrays;
 import java.util.Random;
 
 
@@ -31,7 +30,6 @@ public class GamerMachine implements IAttack, IDefend{
 	public String resProp(String response, String combiAttaq) {
 		
 		String reaction = "";
-		Random r = new Random();
 		for(int j = 0; j < response.length(); j++) {
 			if (response.charAt(j) == '+'){
 				reaction += Integer.toString(Integer.parseInt(""+combiAttaq.charAt(j)) + (int) ((Math.random() * ( 9 - Integer.parseInt(""+combiAttaq.charAt(j))))));

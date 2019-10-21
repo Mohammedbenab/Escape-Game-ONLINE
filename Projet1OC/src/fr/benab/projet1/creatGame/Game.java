@@ -73,12 +73,12 @@ public class Game {
 		int nbrEssai = 0;
 		String defense = defender.combiSecret();
 		String attaq = attack.proposition();
-		System.out.println("1111111111111111");
+
 		while (nbrEssai < 5) {
 			String reponse = Response(attaq, defense);
 			System.out.println("Proposition : " + attaq +" Reponse " + reponse);
 			attaq = attack.resProp(reponse, attaq);
-			System.out.println("2222222222222222");
+
 			if (defense.equals(attaq)) {
 				System.out.println("La combinaison a été trouver : " + defense);
 				this.menuChoicePlayer();
