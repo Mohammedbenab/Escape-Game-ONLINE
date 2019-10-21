@@ -21,10 +21,12 @@ public class Game {
 			System.out.println("Vous avez choisi le mode Challenger");
 			defender = new GamerMachine();
 			attack = new GamerMen();
+			this.treatment();
 		}else if (nbr == 2) {
 			System.out.println("Vous avez choisi le mode Defense");
 			defender = new GamerMen();
-			attack = new GamerMachine();new GamerMen();
+			attack = new GamerMachine();
+			this.treatment();
 		}else if (nbr == 3) {
 			System.out.println("Vous avez choisi le mode Duel");
 			//IAttack[] attack = {new GamerMachine(), new GamerMen()};
@@ -65,6 +67,27 @@ public class Game {
 			i++;
 		}		
 		return resultat;
+	}
+	
+	public void treatment() {
+		int nbrEssai = 0;
+		String defense = defender.combiSecret();
+		String attaq = attack.proposition();
+		System.out.println("1111111111111111");
+		while (nbrEssai < 5) {
+			String reponse = Response(attaq, defense);
+			System.out.println("Proposition : " + attaq +" Reponse " + reponse);
+			attaq = attack.resProp(reponse, attaq);
+			System.out.println("2222222222222222");
+			if (defense.equals(attaq)) {
+				System.out.println("La combinaison a été trouver : " + defense);
+				this.menuChoicePlayer();
+			}else if (nbrEssai == 4 && !defense.equals(attaq)){
+				System.out.println("Vous n'avez pas trouvé la combinaison : " + defense);
+				this.menuChoicePlayer();
+			}
+			nbrEssai++;
+		}
 	}
 	
 }
