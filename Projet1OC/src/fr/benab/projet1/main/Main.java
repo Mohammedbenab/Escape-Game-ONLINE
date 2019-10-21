@@ -1,6 +1,6 @@
 package fr.benab.projet1.main;
 
-import fr.benab.projet1.creatGame.Game;
+import fr.benab.projet1.game.Game;
 
 public class Main {
 

@@ -1,7 +1,4 @@
-package fr.benab.projet1.gamer;
-
-import java.util.Random;
-
+package fr.benab.projet1.game;
 
 public class GamerMachine implements IAttack, IDefend{
 

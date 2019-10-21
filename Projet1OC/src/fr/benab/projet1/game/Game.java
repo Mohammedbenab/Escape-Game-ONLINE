@@ -1,11 +1,6 @@
-package fr.benab.projet1.creatGame;
+package fr.benab.projet1.game;
 
 import java.util.Scanner;
-
-import fr.benab.projet1.gamer.GamerMachine;
-import fr.benab.projet1.gamer.GamerMen;
-import fr.benab.projet1.gamer.IAttack;
-import fr.benab.projet1.gamer.IDefend;
 
 
 public class Game {
