@@ -1,51 +1,46 @@
 package fr.benab.projet1.gamer;
 
 import java.util.Arrays;
-
-import fr.benab.projet1.creatGame.Builder;
-
-public class GamerMachine extends Builder implements IAttack, IDefend{
+import java.util.Random;
 
 
+public class GamerMachine implements IAttack, IDefend{
+
+	String combiAttaq;
+	
 	@Override
 	public String combiSecret() {
 		
-		//int[]tab = new int[4];
 		String combiSecret = "";
 		for (int i = 0; i < 4; i++)  {  
 	    	combiSecret += Integer.toString((int) ((Math.random() * ( 9 - 0 )) + 0));
     	}
-		//combiSecret = Arrays.toString(tab);
 		return combiSecret;
 	}
 
 	@Override
-	public String proposition(String reponse) {
+	public String proposition() {
+		combiAttaq = "";
+		for (int i = 0; i < 4; i++)  {  
+		    combiAttaq += Integer.toString((int) ((Math.random() * ( 9 - 0 )) + 0));
+	    }
+		return combiAttaq;
+	}
 		
-		String combinaison = null;
-		int[]tab = new int[4];
-		char [] reponseT = reponse.toCharArray();
+	@Override
+	public String resProp(String response, String combiAttaq) {
 		
-		if (reponseT == null) {
-
-			for (int i = 0; i < tab.length; i++)  {  
-		    	tab[i] = (int) ((Math.random() * ( 9 - 0 )) + 0);
-		    	System.out.print(tab[i]);
-	    	}
-		combinaison = Arrays.toString(tab);
-		
-		}else if (reponseT != null) {
-			
-			for(int j = 0; j < tab.length; j++) {
-				if (reponseT[j] == '+'){
-					tab[j] = (int) (Math.random() * ( 9 - tab[j] )) ;
-				}else if(reponseT[j] == '-') {
-					tab[j] = (int) (Math.random() * ( tab[j] - 0 ));
-				}else tab[j] = tab[j];
+		String reaction = "";
+		Random r = new Random();
+		for(int j = 0; j < response.length(); j++) {
+			if (response.charAt(j) == '+'){
+				reaction += Integer.toString(Integer.parseInt(""+combiAttaq.charAt(j)) + (int) ((Math.random() * ( 9 - Integer.parseInt(""+combiAttaq.charAt(j))))));
+			}else if(response.charAt(j) == '-') {
+				reaction += Integer.toString((int) ((Math.random() * ( Integer.parseInt(""+combiAttaq.charAt(j)) - 0 ))));
+			}else reaction += combiAttaq.charAt(j);
 			}
-			combinaison = Arrays.toString(tab);
+		return reaction;
 		}
-		return combinaison;
+		
 	}
 
-}

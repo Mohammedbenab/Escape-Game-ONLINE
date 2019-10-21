@@ -2,9 +2,8 @@ package fr.benab.projet1.gamer;
 
 import java.util.Scanner;
 
-import fr.benab.projet1.creatGame.Builder;
 
-public class GamerMen extends Builder implements IAttack, IDefend{
+public class GamerMen implements IAttack, IDefend{
 
 	@Override
 	public String combiSecret() {
@@ -15,16 +14,23 @@ public class GamerMen extends Builder implements IAttack, IDefend{
 	}
 
 	@Override
-	public String proposition(String reponse) {
+	public String proposition() {
 		
 		String combinaison = null;
-		if (reponse == null || reponse != null) {
-				System.out.println("\r\nChoisir une combinaison");
-				Scanner sc = new Scanner(System.in);
-				combinaison = sc.nextLine();
-		}
+		System.out.println("\r\nChoisir une combinaison");
+		Scanner sc = new Scanner(System.in);
+		combinaison = sc.nextLine();
+		
 		return combinaison;
 	}
+
+	@Override
+	public String resProp(String response, String combiAttaq) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 
 }
