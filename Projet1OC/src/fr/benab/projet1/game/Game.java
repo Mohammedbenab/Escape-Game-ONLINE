@@ -4,36 +4,26 @@ import java.util.Scanner;
 
 
 public class Game {
-	
+	/**
+	 * @see IAttack
+	 * @see IDefend
+	 */
 	private IAttack attack;
 	private IDefend defender;
 	
-	public void menu (int nbr) {
-		if (nbr == 0) {
-			System.out.println("Vous avez choisi de quitter le jeu");
-			System.exit (0);
-		}else if (nbr == 1) {
+	public Game (int nbr) {
+
+		if (nbr == 1) {
 			System.out.println("Vous avez choisi le mode Challenger");
 			defender = new GamerMachine();
 			attack = new GamerMen();
-			this.treatment();
 		}else if (nbr == 2) {
 			System.out.println("Vous avez choisi le mode Defense");
 			defender = new GamerMen();
 			attack = new GamerMachine();
-			this.treatment();
-		}else if (nbr == 3) {
-			System.out.println("Vous avez choisi le mode Duel");
-			//IAttack[] attack = {new GamerMachine(), new GamerMen()};
-			//IDefend[] defender = {new GamerMachine(), new GamerMen()};
-		}else {
-			System.out.println("Veuillez choisir une option dans le menu");
-			this.menuChoicePlayer();
 		}
-		
 	}
 
-	
 	public void desplayMenu() {
 		System.out.println("0: Quitter le programme");
 		System.out.println("1: Mode Challeger");
@@ -41,12 +31,6 @@ public class Game {
 		System.out.println("3: Mode Duel");
 	}
 	
-	public void menuChoicePlayer() {
-		this.desplayMenu();
-		Scanner sc = new Scanner(System.in);
-		int nbr = sc.nextInt();
-		this.menu(nbr);
-	}
 	
 	public String Response (String gamerAtt, String gamerDef) {
 		
@@ -64,7 +48,7 @@ public class Game {
 		return resultat;
 	}
 	
-	public void treatment() {
+	public void treatment() throws Exception {
 		int nbrEssai = 0;
 		String defense = defender.combiSecret();
 		String attaq = attack.proposition();
@@ -76,10 +60,10 @@ public class Game {
 
 			if (defense.equals(attaq)) {
 				System.out.println("La combinaison a été trouver : " + defense);
-				this.menuChoicePlayer();
+
 			}else if (nbrEssai == 4 && !defense.equals(attaq)){
 				System.out.println("Vous n'avez pas trouvé la combinaison : " + defense);
-				this.menuChoicePlayer();
+
 			}
 			nbrEssai++;
 		}
