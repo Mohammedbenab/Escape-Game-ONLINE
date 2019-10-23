@@ -36,6 +36,5 @@ public class GamerMachine implements IAttack, IDefend{
 			}
 		return reaction;
 		}
-		
 	}
 

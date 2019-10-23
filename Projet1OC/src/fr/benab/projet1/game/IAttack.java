@@ -11,17 +11,18 @@ public interface IAttack {
 		Scanner sc = new Scanner(System.in);
 		while (!isOk) {
 			System.out.println("\r\nProposer une combinaison");
-			try {
-			combinaison = sc.nextLine();
-			if (combinaison.length() < 4 || combinaison.length() > 4) {
-					System.err.println("Taille de la combi incorrect !");
-			}else isOk = true;
-			}catch (Exception e) {
-				e.printStackTrace();
-				System.err.println("Error in your choice !");
-			}
+				try {
+						combinaison = sc.nextLine();
+						if (combinaison.length() < 4 || combinaison.length() > 4) {
+								System.err.println("Taille de la combi incorrect !");
+						}else {
+								isOk = true;
+						}
+				}catch (Exception e) {
+						e.printStackTrace();
+						System.err.println("Error in your choice !");
+				}
 		}
 		return combinaison;
 	}
-
 }

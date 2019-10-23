@@ -23,14 +23,6 @@ public class Game {
 			attack = new GamerMachine();
 		}
 	}
-
-	public void desplayMenu() {
-		System.out.println("0: Quitter le programme");
-		System.out.println("1: Mode Challeger");
-		System.out.println("2: Mode Defense");
-		System.out.println("3: Mode Duel");
-	}
-	
 	
 	public String Response (String gamerAtt, String gamerDef) {
 		
@@ -38,12 +30,12 @@ public class Game {
 		
 		int i = 0;
 		while (i < gamerAtt.length()) {
-			if (Integer.valueOf("" + gamerAtt.charAt(i)) > Integer.valueOf("" + gamerDef.charAt(i))) {
-				resultat += "-";
-			}else if (Integer.valueOf("" + gamerAtt.charAt(i)) < Integer.valueOf("" + gamerDef.charAt(i))) {
-				resultat += "+";
-			}else resultat += "=";
-			i++;
+				if (Integer.valueOf("" + gamerAtt.charAt(i)) > Integer.valueOf("" + gamerDef.charAt(i))) {
+					resultat += "-";
+				}else if (Integer.valueOf("" + gamerAtt.charAt(i)) < Integer.valueOf("" + gamerDef.charAt(i))) {
+					resultat += "+";
+				}else resultat += "=";
+				i++;
 		}		
 		return resultat;
 	}
@@ -68,6 +60,5 @@ public class Game {
 			}
 			nbrEssai++;
 		}
-	}
-	
+	}	
 }
