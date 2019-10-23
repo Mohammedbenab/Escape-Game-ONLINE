@@ -2,5 +2,5 @@ package fr.benab.projet1.game;
 
 public interface IDefend {
 	
-	public abstract String combiSecret();
+	public abstract String combiSecret() throws Exception;
 }

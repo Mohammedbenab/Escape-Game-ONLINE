@@ -60,6 +60,7 @@ public class Game {
 
 			if (defense.equals(attaq)) {
 				System.out.println("La combinaison a été trouver : " + defense);
+				break;
 
 			}else if (nbrEssai == 4 && !defense.equals(attaq)){
 				System.out.println("Vous n'avez pas trouvé la combinaison : " + defense);

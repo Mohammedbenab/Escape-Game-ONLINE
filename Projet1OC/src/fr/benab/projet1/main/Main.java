@@ -17,7 +17,7 @@ public class Main {
 			
 			while (!play) {
 				
-				System.out.println("0: Quitter le programme");
+				System.out.println("0: Exit");
 				System.out.println("1: Mode Challeger");
 				System.out.println("2: Mode Defense");
 				System.out.println("3: Mode Duel");
@@ -41,6 +41,12 @@ public class Main {
 			
 			Game game = new Game(choice);
 			game.treatment();
+			System.out.println("Game again of same mode ? (Y/N)");
+			String response = sc.nextLine();
+			if (response.charAt(0) == 'Y' || response.charAt(0) == 'y') {
+				game.treatment();
+			}
+			
 		}
 	}
 }
