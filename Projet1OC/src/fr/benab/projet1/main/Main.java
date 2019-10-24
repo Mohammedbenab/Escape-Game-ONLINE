@@ -42,6 +42,12 @@ public class Main {
 			}
 			
 			Game game = new Game(choice);
+			if (choice == 3) {
+			Game game1 = new Game(1);
+			Game game2 =new Game(2);
+				game1.start();
+				game2.start();
+			}
 			game.treatment();
 			System.out.println("Game again of same mode ? (Y/N)");
 			String response = sc.nextLine();

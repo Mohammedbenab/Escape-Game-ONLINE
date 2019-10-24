@@ -3,7 +3,7 @@ package fr.benab.projet1.game;
 import java.util.Scanner;
 
 
-public class Game {
+public class Game extends Thread{
 	/**
 	 * @see IAttack
 	 * @see IDefend
@@ -40,7 +40,7 @@ public class Game {
 		return resultat;
 	}
 	
-	public void treatment() throws Exception {
+	public synchronized void treatment() throws Exception {
 		int nbrEssai = 0;
 		String defense = defender.combiSecret();
 		String attaq = attack.proposition();
@@ -60,5 +60,14 @@ public class Game {
 			}
 			nbrEssai++;
 		}
-	}	
+	}
+	
+	@Override
+	public void run() {
+		try {
+				treatment();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
