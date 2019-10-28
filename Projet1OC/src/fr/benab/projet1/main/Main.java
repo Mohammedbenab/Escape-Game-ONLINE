@@ -2,11 +2,9 @@ package fr.benab.projet1.main;
 
 import java.util.Scanner;
 
-
 import fr.benab.projet1.game.Game;
 
 public class Main {
-
 	public static void main(String[] args) throws Exception {
 		System.out.println("Welcome to Escape game");
 		Scanner sc = new Scanner(System.in);
