@@ -18,7 +18,7 @@ public class GamerMen implements IAttack, IDefend {
 		String combinaison = null;
 		Scanner sc = new Scanner(System.in);
 		while (!isOk) {
-			System.out.println("\r\nChoice your combinaison");
+			System.out.println("Choice your combinaison");
 
 			try {
 				combinaison = sc.nextLine();

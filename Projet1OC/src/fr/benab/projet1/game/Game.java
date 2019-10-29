@@ -21,11 +21,14 @@ public class Game {
 	 *      joueur Ordinateur.
 	 * @see GamerMachine Classes qui peut etre modifié, et qui permet d'instancier
 	 *      un joueur Homme.
+	 * @param devMode permet a l'utilisateur d'activer le mode développeur pour
+	 *                voire la solution du joueur
 	 */
 	private IAttack attack;
 	private IDefend defender;
 	private GamerMen men;
 	private GamerMachine machine;
+	private final String devMode = "7777";
 
 	/**
 	 * La méthode Game(int nbr) permet d'instancier les joueurs en fonction du mode
@@ -50,6 +53,7 @@ public class Game {
 			defender = new GamerMen();
 			attack = new GamerMachine();
 		} else if (nbr == 3) {
+			System.out.println("Vous avez choisi le mode Duel");
 			men = new GamerMen();
 			machine = new GamerMachine();
 		}
@@ -97,24 +101,33 @@ public class Game {
 	 *                   (par defaut).
 	 */
 
-	public synchronized void treatment() throws Exception {
+	public void treatment() throws Exception {
 		int nbrEssai = 0;
 		String defense = defender.combiSecret();
-		System.out.println("Combinaison d'attaque :");
+		System.out.println("\r\nCombinaison d'attaque :");
 		String attaq = attack.proposition();
+
+		if (!devMode.equals(attaq)) {
+			System.out.println("\r\nLe mode developpeur n'est pas activé");
+		}
 		while (nbrEssai < 5) {
+
+			if (devMode.equals(attaq)) {
+				System.out.println("\r\nVous avez activé le mode developpeur");
+				System.out.println("La solution du defenseur est :" + defense);
+			}
 			String reponse = Response(attaq, defense);
-			System.out.println("Proposition : " + attaq + " Reponse " + reponse);
+			System.out.println("\r\nProposition : " + attaq + " Reponse " + reponse);
 
 			if (defense.equals(attaq)) {
-				System.out.println("La combinaison a été trouver : " + defense);
+				System.out.println("\r\nLa combinaison a été trouver : " + defense);
 				break;
 
 			} else if (nbrEssai == 4 && !defense.equals(attaq)) {
-				System.out.println("La combinaison n'a pas été trouvé: " + defense);
+				System.out.println("\r\nLa combinaison n'a pas été trouvé: " + defense);
 				break;
 			}
-			System.out.println("Combinaison d'attaque");
+			System.out.println("\r\nCombinaison d'attaque");
 			attaq = attack.resProp(reponse, attaq);
 			nbrEssai++;
 		}
@@ -124,6 +137,7 @@ public class Game {
 	 * La méthode multiPlayer() permet à deux joueurs de jouer simultanement. Le
 	 * premier qui trouve la combinaison avant les cinq tantive à gagné.
 	 * 
+	 * @param devMode  permet a l'utilisateur de voire la solution de l'adversaire
 	 * @param reponse1 permet de stocker le resultat de la méthode Response()
 	 *                 comparant la proposition du joueur Homme, et le combinaison
 	 *                 secrète de l'Ordinateur.
@@ -143,31 +157,41 @@ public class Game {
 
 	public void multiPlayer() throws Exception {
 		String reponse1, reponse2;
-		System.out.println("Attack combi of MenPlayer :");
+		System.out.println("\r\nAttack combi of MenPlayer :");
 		String menProp = men.proposition();
 		System.out.println("Defense combi of MenPlayer :");
 		String machProp = machine.proposition();
 		String menDef = men.combiSecret();
+		String machDef = machine.combiSecret();
 		int essai = 0;
+		if (!devMode.equals(menProp)) {
+			System.out.println("\r\nMode developpeur non activé !");
+		}
 		while (essai < 5) {
-			reponse1 = Response(menProp, machProp);
-			System.out.println("Votre Proposition est: " + menProp + " Reponse " + reponse1);
+
+			if (devMode.equals(menProp)) {
+				System.out.println("\r\nVous avez activé le mode developpeur");
+				System.out.println("La solution du defenseur est :" + machDef);
+			}
+
+			reponse1 = Response(menProp, machDef);
+			System.out.println("\r\nVotre Proposition est: " + menProp + " Reponse " + reponse1);
 			reponse2 = Response(machProp, menDef);
 			System.out.println("Proposition de l'ordinateur: " + machProp + " Reponse " + reponse2);
 
-			if (menProp.equals(machProp)) {
-				System.out.println("Vous avez gagner, vous avez trouvé la conbinaison " + machProp);
+			if (menProp.equals(machDef)) {
+				System.out.println("\r\nVous avez gagner, vous avez trouvé la conbinaison " + machProp);
 				break;
 			} else if (machProp.equals(menDef)) {
-				System.out.println("Vous avez perdu votre cobiniason a été trouvée");
+				System.out.println("\r\nVous avez perdu votre cobiniason a été trouvée");
 				break;
 			} else if (essai == 4) {
-				System.out.println("Aucun combinaison n'a été trouvé ");
+				System.out.println("\r\nAucun combinaison n'a été trouvé ");
 				System.out.println("Combi MenPlayer : " + menDef);
 				System.out.println("Combi ComputerPlayer :" + machProp);
 				break;
 			}
-			System.out.println("Attack combi of MenPlayer");
+			System.out.println("\r\nAttack combi of MenPlayer");
 			menProp = men.resProp(menProp, machProp);
 			machProp = machine.resProp(reponse2, machProp);
 			essai++;

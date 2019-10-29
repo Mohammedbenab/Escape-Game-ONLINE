@@ -6,6 +6,8 @@ public class GamerMachine implements IAttack, IDefend {
 	 * 
 	 * @return Une instance de String, qui correspond à la combinaison secrète du
 	 *         joueur.
+	 * 
+	 * @param conbiSecret pertmettant de stocker la conbinaison.
 	 */
 	@Override
 	public String combiSecret() {
