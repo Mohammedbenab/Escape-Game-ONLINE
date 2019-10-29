@@ -1,8 +1,18 @@
 package fr.benab.projet1.game;
 
+/**
+ * Game est la classe representant le moteur du jeu
+ * 
+ * @author Benabdallah
+ * @version 1.0
+ *
+ */
 public class Game {
 	/**
-	 * @see IAttackInterface pouvant être modifier, et qui sera implémenté dans une
+	 * "attaque" cette voriable peut *etre modifier mais doit permettre d'identifier
+	 * un joueur en position d'attaque.
+	 * 
+	 * @see IAttack Interface pouvant être modifier, et qui sera implémenté dans une
 	 *      classe pour créer une combinaison d'attaque.
 	 * @see IDefend Interface pouvant être modifier, et qui sera implémenté dans une
 	 *      classe pour créer une combinaison d'attaque.
@@ -46,13 +56,13 @@ public class Game {
 	}
 
 	/**
-	 * La méthode Response() compare les 2 combinaisons saisie chacune par les deux joueurs.
-	 * Le joueur attaquant et le joueur défenseur.
+	 * La méthode Response() compare les 2 combinaisons saisie chacune par les deux
+	 * joueurs. Le joueur attaquant et le joueur défenseur.
 	 * 
 	 * @param gamerAtt La combinaison de l'attaquant
 	 * @param gamerDef La combinaison du defenseur
-	 * @return Permet de récupérer le résultat sous forme d'une chaine de caractére. Pour
-	 * facilité la combinaison d'attaque de la prochaine tantative.
+	 * @return Permet de récupérer le résultat sous forme d'une chaine de caractére.
+	 *         Pour facilité la combinaison d'attaque de la prochaine tantative.
 	 */
 	public String Response(String gamerAtt, String gamerDef) {
 
@@ -120,10 +130,13 @@ public class Game {
 	 * @param reponse2 permet de stocker le resultat de la méthode Response()
 	 *                 comparant la proposition de l'ordinateur, et le combinaison
 	 *                 secrète du joueur homme.
-	 * @param menProp  combinaison d'attaque proposé par le joueur homme
-	 * @param machProp combinaison d'attaque proposé par le joueur ordinateur
-	 * @param menDef   combinaison de défense proposé par le joueur homme
-	 * @param machDef  combinaison de défense proposé par le joueur ordinateur
+	 * @param menProp  combinaison d'attaque proposé par le joueur homme.
+	 * @param machProp combinaison d'attaque proposé par le joueur ordinateur.
+	 * @param menDef   combinaison de défense proposé par le joueur homme.
+	 * @param machDef  combinaison de défense proposé par le joueur ordinateur.
+	 * @param essai    represente le nombre d'essai (ne peut depasser 5 tantative)
+	 *                 que le joueur en possition d'attaque aura pour trouver la
+	 *                 combinaison de son adversaire.
 	 * @throws Exception elle est levée si la saisie ne correspond pas à quatre
 	 *                   chiffres
 	 */

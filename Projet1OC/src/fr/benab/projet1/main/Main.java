@@ -43,7 +43,7 @@ public class Main {
 			if (choice == 3) {
 				game.multiPlayer();
 			} else {
-				game.treatment(); // game.start(), car thread
+				game.treatment(); 
 			}
 
 			System.out.println("Game again of same mode ? (Y/N)");
