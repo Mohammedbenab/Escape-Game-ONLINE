@@ -6,14 +6,14 @@
 
 
 
-<p>Vous devez tous d'abord ouvrir votre terminal et verifier que java est bien installé.</p>
+<p>Vous devez tout d'abord ouvrir votre terminal et vérifier que java est bien installé.</p>
 
 `java -version`
 
 
 
-<p>Une fois le projet sur votre sur votre ordianateur, placez-vous niveau dossier src/.
-Apres cela, compiler grace à la commande suivante:</p>
+<p>Une fois le projet sur votre ordianateur, placez-vous au niveau du dossier src/.
+Après cela, compilé grace à la commande suivante:</p>
 
 `javac fr/benab/projet1/game/Main.java`
 
@@ -21,6 +21,6 @@ Apres cela, compiler grace à la commande suivante:</p>
 
 
 
-<p>Enfin, lancer le fichier Main avec la commande suivante:</p>
+<p>Enfin, lancer le fichier Main pour commancer le programme avec la commande suivante:</p>
 
 `java fr.benab.projet1.game.Main`
