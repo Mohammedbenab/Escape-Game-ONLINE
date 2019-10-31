@@ -1,5 +1,8 @@
 package fr.benab.projet1.game;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * Game est la classe representant le moteur du jeu
  * 
@@ -8,6 +11,8 @@ package fr.benab.projet1.game;
  *
  */
 public class Game {
+	
+	private static Logger logger = LogManager.getLogger(Game.class);
 	/**
 	 * "attaque" cette voriable peut *etre modifier mais doit permettre d'identifier
 	 * un joueur en position d'attaque.
@@ -48,14 +53,17 @@ public class Game {
 			System.out.println("Vous avez choisi le mode Challenger");
 			defender = new GamerMachine();
 			attack = new GamerMen();
+			logger.info("Instanciation d'un attaquant et un defenseur");
 		} else if (nbr == 2) {
 			System.out.println("Vous avez choisi le mode Defense");
 			defender = new GamerMen();
 			attack = new GamerMachine();
+			logger.info("Instanciation d'un attaquant et un defenseur");
 		} else if (nbr == 3) {
 			System.out.println("Vous avez choisi le mode Duel");
 			men = new GamerMen();
 			machine = new GamerMachine();
+			logger.info("Instanciation d'un joueur homme et machine");
 		}
 	}
 
@@ -104,8 +112,10 @@ public class Game {
 	public void treatment() throws Exception {
 		int nbrEssai = 0;
 		String defense = defender.combiSecret();
+		logger.info("Combinaison de defense saisie");
 		System.out.println("\r\nCombinaison d'attaque :");
 		String attaq = attack.proposition();
+		logger.info("Combinaison d'attaque saisie");
 
 		if (!devMode.equals(attaq)) {
 			System.out.println("\r\nLe mode developpeur n'est pas activé");
@@ -159,15 +169,19 @@ public class Game {
 		String reponse1, reponse2;
 		System.out.println("\r\nAttack combi of MenPlayer :");
 		String menProp = men.proposition();
+		logger.info("Combinaison d'attaque men saisie");
 		System.out.println("Defense combi of MenPlayer :");
 		String machProp = machine.proposition();
+		logger.info("Combinaison d'attaque machine saisie");
 		String menDef = men.combiSecret();
+		logger.info("Combinaison de def men saisie");
 		String machDef = machine.combiSecret();
-		int essai = 0;
+		logger.info("Combinaison de def machine saisie");
+		int nbrEssai = 0;
 		if (!devMode.equals(menProp)) {
 			System.out.println("\r\nMode developpeur non activé !");
 		}
-		while (essai < 5) {
+		while (nbrEssai < 5) {
 
 			if (devMode.equals(menProp)) {
 				System.out.println("\r\nVous avez activé le mode developpeur");
@@ -185,7 +199,7 @@ public class Game {
 			} else if (machProp.equals(menDef)) {
 				System.out.println("\r\nVous avez perdu votre cobiniason a été trouvée");
 				break;
-			} else if (essai == 4) {
+			} else if (nbrEssai == 4) {
 				System.out.println("\r\nAucun combinaison n'a été trouvé ");
 				System.out.println("Combi MenPlayer : " + menDef);
 				System.out.println("Combi ComputerPlayer :" + machProp);
@@ -194,7 +208,7 @@ public class Game {
 			System.out.println("\r\nAttack combi of MenPlayer");
 			menProp = men.resProp(menProp, machProp);
 			machProp = machine.resProp(reponse2, machProp);
-			essai++;
+			nbrEssai++;
 		}
 
 	}
