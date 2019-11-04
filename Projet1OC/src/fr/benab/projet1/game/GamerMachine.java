@@ -1,10 +1,16 @@
 package fr.benab.projet1.game;
 
 public class GamerMachine implements IAttack, IDefend {
-	
-protected PropertyValues value = new PropertyValues();
-	
+
+	/**
+	 * @param combiSize Valeur de la clé pCombiSize récuperée dans le fichier
+	 *                  config.properties
+	 * @see PropertyValues
+	 */
+
+	protected PropertyValues value = new PropertyValues();
 	private int combiSize = Integer.valueOf(value.getValuesProp("pCombiSize"));
+
 	/**
 	 * Cette méthode permet de constituer une combinaison secrète.
 	 * 

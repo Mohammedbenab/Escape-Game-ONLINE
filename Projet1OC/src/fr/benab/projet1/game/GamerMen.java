@@ -6,11 +6,18 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class GamerMen implements IAttack, IDefend {
-	
+
+	/**
+	 * @param combiSize Valeur de la clé pCombiSize récuperée dans le fichier
+	 *                  config.properties
+	 * @see PropertyValues
+	 */
+
 	private static Logger logger = LogManager.getLogger(GamerMen.class);
 	protected PropertyValues value = new PropertyValues();
-	
+
 	private int combiSize = Integer.valueOf(value.getValuesProp("pCombiSize"));
+
 	/**
 	 * @return Une instance de String, et permet de recupérer une combinaison grace
 	 *         à la saisie clavier. c'est une combianison secrète du joueur.

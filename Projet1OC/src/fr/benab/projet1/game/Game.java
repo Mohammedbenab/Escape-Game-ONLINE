@@ -1,7 +1,5 @@
 package fr.benab.projet1.game;
 
-import java.io.InputStream;
-import java.util.Properties;
 import java.util.Scanner;
 
 import org.apache.logging.log4j.LogManager;
@@ -15,7 +13,7 @@ import org.apache.logging.log4j.Logger;
  *
  */
 public class Game {
-	
+
 	private static Logger logger = LogManager.getLogger(Game.class);
 	protected PropertyValues value = new PropertyValues();
 
@@ -32,8 +30,15 @@ public class Game {
 	 *      joueur Ordinateur.
 	 * @see GamerMachine Classes qui peut etre modifié, et qui permet d'instancier
 	 *      un joueur Homme.
-	 * @param devMode permet a l'utilisateur d'activer le mode développeur pour
-	 *                voire la solution du joueur
+	 * @param devMode  permet a l'utilisateur d'activer le mode développeur pour
+	 *                 voire la solution du joueur.
+	 * 
+	 * @param devMode  valeur de la clé pDevMode récupérée dans le fichier
+	 *                 config.properties.
+	 * @param nbrEssai valeur de la clé pNbrEssai récupérée dans le fichier
+	 *                 config.properties.
+	 * @param pass     valeur de la clé pPass récupérée dans le fichier
+	 *                 config.properties.
 	 */
 	private IAttack attack;
 	private IDefend defender;
@@ -42,7 +47,6 @@ public class Game {
 	private String devMode = value.getValuesProp("pDevMode");
 	private int nbrEssai = Integer.valueOf(value.getValuesProp("pNbrEssai"));
 	private String pass = value.getValuesProp("pPass");
-
 
 	/**
 	 * La méthode Game(int nbr) permet d'instancier les joueurs en fonction du mode
@@ -55,8 +59,7 @@ public class Game {
 	 * @param men      instanciation d'un joueur homme
 	 * @param machine  instanciation d'un joueur qui sera un ordinateur
 	 */
-	
-	
+
 	public Game(int nbr) throws Exception {
 
 		if (nbr == 1) {
@@ -86,7 +89,7 @@ public class Game {
 	 * @return Permet de récupérer le résultat sous forme d'une chaine de caractére.
 	 *         Pour facilité la combinaison d'attaque de la prochaine tantative.
 	 */
-	
+
 	public String Response(String gamerAtt, String gamerDef) {
 
 		String resultat = "";
@@ -138,8 +141,8 @@ public class Game {
 				Scanner sc = new Scanner(System.in);
 				String passSaisie = sc.nextLine();
 				if (passSaisie.equals(pass)) {
-				System.out.println("\r\nDeveloper mode is actived");
-				System.out.println("La solution of defense is :" + defense);
+					System.out.println("\r\nDeveloper mode is actived");
+					System.out.println("La solution of defense is :" + defense);
 				}
 			}
 			String reponse = Response(attaq, defense);
@@ -204,8 +207,8 @@ public class Game {
 				Scanner sc = new Scanner(System.in);
 				String passSaisie = sc.nextLine();
 				if (passSaisie.equals(pass)) {
-				System.out.println("\r\nVous avez activé le mode developpeur");
-				System.out.println("La solution du defenseur est :" + machDef);
+					System.out.println("\r\nVous avez activé le mode developpeur");
+					System.out.println("La solution du defenseur est :" + machDef);
 				}
 			}
 
