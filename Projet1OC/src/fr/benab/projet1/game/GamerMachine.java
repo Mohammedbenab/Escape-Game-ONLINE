@@ -1,6 +1,10 @@
 package fr.benab.projet1.game;
 
 public class GamerMachine implements IAttack, IDefend {
+	
+protected PropertyValues value = new PropertyValues();
+	
+	private int combiSize = Integer.valueOf(value.getValuesProp("pCombiSize"));
 	/**
 	 * Cette méthode permet de constituer une combinaison secrète.
 	 * 
@@ -13,7 +17,7 @@ public class GamerMachine implements IAttack, IDefend {
 	public String combiSecret() {
 
 		String combiSecret = "";
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < combiSize; i++) {// la taille de combi peut etre changée
 			combiSecret += Integer.toString((int) ((Math.random() * (9 - 0)) + 0));
 		}
 		return combiSecret;

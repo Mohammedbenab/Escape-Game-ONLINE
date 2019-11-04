@@ -1,5 +1,9 @@
 package fr.benab.projet1.game;
 
+import java.io.InputStream;
+import java.util.Properties;
+import java.util.Scanner;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,6 +17,8 @@ import org.apache.logging.log4j.Logger;
 public class Game {
 	
 	private static Logger logger = LogManager.getLogger(Game.class);
+	protected PropertyValues value = new PropertyValues();
+
 	/**
 	 * "attaque" cette voriable peut *etre modifier mais doit permettre d'identifier
 	 * un joueur en position d'attaque.
@@ -33,7 +39,10 @@ public class Game {
 	private IDefend defender;
 	private GamerMen men;
 	private GamerMachine machine;
-	private final String devMode = "7777";
+	private String devMode = value.getValuesProp("pDevMode");
+	private int nbrEssai = Integer.valueOf(value.getValuesProp("pNbrEssai"));
+	private String pass = value.getValuesProp("pPass");
+
 
 	/**
 	 * La méthode Game(int nbr) permet d'instancier les joueurs en fonction du mode
@@ -46,7 +55,8 @@ public class Game {
 	 * @param men      instanciation d'un joueur homme
 	 * @param machine  instanciation d'un joueur qui sera un ordinateur
 	 */
-
+	
+	
 	public Game(int nbr) throws Exception {
 
 		if (nbr == 1) {
@@ -76,6 +86,7 @@ public class Game {
 	 * @return Permet de récupérer le résultat sous forme d'une chaine de caractére.
 	 *         Pour facilité la combinaison d'attaque de la prochaine tantative.
 	 */
+	
 	public String Response(String gamerAtt, String gamerDef) {
 
 		String resultat = "";
@@ -110,7 +121,7 @@ public class Game {
 	 */
 
 	public void treatment() throws Exception {
-		int nbrEssai = 0;
+
 		String defense = defender.combiSecret();
 		logger.info("Combinaison de defense saisie");
 		System.out.println("\r\nCombinaison d'attaque :");
@@ -120,11 +131,16 @@ public class Game {
 		if (!devMode.equals(attaq)) {
 			System.out.println("\r\nLe mode developpeur n'est pas activé");
 		}
-		while (nbrEssai < 5) {
+		while (nbrEssai > 0) {
 
 			if (devMode.equals(attaq)) {
-				System.out.println("\r\nVous avez activé le mode developpeur");
-				System.out.println("La solution du defenseur est :" + defense);
+				System.out.println("Can you enter PassWord: ");
+				Scanner sc = new Scanner(System.in);
+				String passSaisie = sc.nextLine();
+				if (passSaisie.equals(pass)) {
+				System.out.println("\r\nDeveloper mode is actived");
+				System.out.println("La solution of defense is :" + defense);
+				}
 			}
 			String reponse = Response(attaq, defense);
 			System.out.println("\r\nProposition : " + attaq + " Reponse " + reponse);
@@ -133,13 +149,13 @@ public class Game {
 				System.out.println("\r\nLa combinaison a été trouver : " + defense);
 				break;
 
-			} else if (nbrEssai == 4 && !defense.equals(attaq)) {
+			} else if (nbrEssai == 1 && !defense.equals(attaq)) {
 				System.out.println("\r\nLa combinaison n'a pas été trouvé: " + defense);
 				break;
 			}
 			System.out.println("\r\nCombinaison d'attaque");
 			attaq = attack.resProp(reponse, attaq);
-			nbrEssai++;
+			nbrEssai--;
 		}
 	}
 
@@ -177,15 +193,20 @@ public class Game {
 		logger.info("Combinaison de def men saisie");
 		String machDef = machine.combiSecret();
 		logger.info("Combinaison de def machine saisie");
-		int nbrEssai = 0;
+
 		if (!devMode.equals(menProp)) {
 			System.out.println("\r\nMode developpeur non activé !");
 		}
-		while (nbrEssai < 5) {
+		while (nbrEssai > 0) {
 
 			if (devMode.equals(menProp)) {
+				System.out.println("Can you enter PassWord: ");
+				Scanner sc = new Scanner(System.in);
+				String passSaisie = sc.nextLine();
+				if (passSaisie.equals(pass)) {
 				System.out.println("\r\nVous avez activé le mode developpeur");
 				System.out.println("La solution du defenseur est :" + machDef);
+				}
 			}
 
 			reponse1 = Response(menProp, machDef);
@@ -199,7 +220,7 @@ public class Game {
 			} else if (machProp.equals(menDef)) {
 				System.out.println("\r\nVous avez perdu votre cobiniason a été trouvée");
 				break;
-			} else if (nbrEssai == 4) {
+			} else if (nbrEssai == 1) {
 				System.out.println("\r\nAucun combinaison n'a été trouvé ");
 				System.out.println("Combi MenPlayer : " + menDef);
 				System.out.println("Combi ComputerPlayer :" + machProp);
@@ -208,7 +229,7 @@ public class Game {
 			System.out.println("\r\nAttack combi of MenPlayer");
 			menProp = men.resProp(menProp, machProp);
 			machProp = machine.resProp(reponse2, machProp);
-			nbrEssai++;
+			nbrEssai--;
 		}
 
 	}
