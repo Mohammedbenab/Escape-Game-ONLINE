@@ -29,14 +29,12 @@ public class Main {
 					logger.info("Choix du menu saisie");
 					choice = Integer.parseInt(saisie);
 					if (choice < 0 || choice > 3) {
-						System.err.println("Can you choice number of menu mode");
 						logger.warn("Le chiffre n'est pas compris entre 0 et 3");
 					} else {
 						play = true;
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
-					System.err.println("Error in your choice !");
 					logger.error("Votre saisie ne correspond pas aux choix du menu proposés");
 				}
 			}
