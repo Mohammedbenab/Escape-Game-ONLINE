@@ -16,7 +16,7 @@ public class GamerMen implements IAttack, IDefend {
 	private static Logger logger = LogManager.getLogger(GamerMen.class);
 	protected PropertyValues value = new PropertyValues();
 
-	private int combiSize = Integer.valueOf(value.getValuesProp("pCombiSize"));
+	private int combiSize = Integer.valueOf(value.getCombiSize());
 
 	/**
 	 * @return Une instance de String, et permet de recupérer une combinaison grace

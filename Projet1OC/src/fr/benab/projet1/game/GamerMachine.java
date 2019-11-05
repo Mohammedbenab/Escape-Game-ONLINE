@@ -9,7 +9,7 @@ public class GamerMachine implements IAttack, IDefend {
 	 */
 
 	protected PropertyValues value = new PropertyValues();
-	private int combiSize = Integer.valueOf(value.getValuesProp("pCombiSize"));
+	private int combiSize = Integer.valueOf(value.getCombiSize());
 
 	/**
 	 * Cette méthode permet de constituer une combinaison secrète.

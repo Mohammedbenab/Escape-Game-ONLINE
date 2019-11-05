@@ -1,7 +1,5 @@
 package fr.benab.projet1.game;
 
-import java.util.Scanner;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -44,9 +42,9 @@ public class Game {
 	private IDefend defender;
 	private GamerMen men;
 	private GamerMachine machine;
-	private String devMode = value.getValuesProp("pDevMode");
-	private int nbrEssai = Integer.valueOf(value.getValuesProp("pNbrEssai"));
-	private String pass = value.getValuesProp("pPass");
+	protected boolean devMode = Boolean.parseBoolean(value.getDevMode());
+	private int nbrEssai = Integer.valueOf(value.getNbrEssai());
+	private String sizeCombi = value.getCombiSize();
 
 	/**
 	 * La méthode Game(int nbr) permet d'instancier les joueurs en fonction du mode
@@ -124,27 +122,23 @@ public class Game {
 	 */
 
 	public void treatment() throws Exception {
-
+		System.out.println("The combinaison size is " + sizeCombi + " numbers");
 		String defense = defender.combiSecret();
 		logger.info("Combinaison de defense saisie");
 		System.out.println("\r\nCombinaison d'attaque :");
 		String attaq = attack.proposition();
 		logger.info("Combinaison d'attaque saisie");
 
-		if (!devMode.equals(attaq)) {
+		if (!devMode) {
 			System.out.println("\r\nLe mode developpeur n'est pas activé");
 		}
 		while (nbrEssai > 0) {
 
-			if (devMode.equals(attaq)) {
-				System.out.println("Can you enter PassWord: ");
-				Scanner sc = new Scanner(System.in);
-				String passSaisie = sc.nextLine();
-				if (passSaisie.equals(pass)) {
-					System.out.println("\r\nDeveloper mode is actived");
-					System.out.println("La solution of defense is :" + defense);
+			if (devMode) {
+				System.out.println("\r\nDeveloper mode actived");
+				System.out.println("La solution of defense is :" + defense);
 				}
-			}
+	
 			String reponse = Response(attaq, defense);
 			System.out.println("\r\nProposition : " + attaq + " Reponse " + reponse);
 
@@ -159,8 +153,8 @@ public class Game {
 			System.out.println("\r\nCombinaison d'attaque");
 			attaq = attack.resProp(reponse, attaq);
 			nbrEssai--;
-		}
 	}
+}
 
 	/**
 	 * La méthode multiPlayer() permet à deux joueurs de jouer simultanement. Le
@@ -185,6 +179,7 @@ public class Game {
 	 */
 
 	public void multiPlayer() throws Exception {
+		System.out.println("The combinaison size is " + sizeCombi + " numbers");
 		String reponse1, reponse2;
 		System.out.println("\r\nAttack combi of MenPlayer :");
 		String menProp = men.proposition();
@@ -197,20 +192,16 @@ public class Game {
 		String machDef = machine.combiSecret();
 		logger.info("Combinaison de def machine saisie");
 
-		if (!devMode.equals(menProp)) {
+		if (!devMode) {
 			System.out.println("\r\nMode developpeur non activé !");
 		}
 		while (nbrEssai > 0) {
 
-			if (devMode.equals(menProp)) {
-				System.out.println("Can you enter PassWord: ");
-				Scanner sc = new Scanner(System.in);
-				String passSaisie = sc.nextLine();
-				if (passSaisie.equals(pass)) {
+			if (devMode) {
+
 					System.out.println("\r\nVous avez activé le mode developpeur");
 					System.out.println("La solution du defenseur est :" + machDef);
 				}
-			}
 
 			reponse1 = Response(menProp, machDef);
 			System.out.println("\r\nVotre Proposition est: " + menProp + " Reponse " + reponse1);
