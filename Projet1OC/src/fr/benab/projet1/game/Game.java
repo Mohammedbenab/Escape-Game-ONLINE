@@ -44,7 +44,7 @@ public class Game {
 	private GamerMachine machine;
 	protected boolean devMode = Boolean.parseBoolean(value.getDevMode());
 	private int nbrEssai = Integer.valueOf(value.getNbrEssai());
-	private String sizeCombi = value.getCombiSize();
+	private int sizeCombi = Integer.valueOf(value.getCombiSize());
 
 	/**
 	 * La méthode Game(int nbr) permet d'instancier les joueurs en fonction du mode
@@ -128,6 +128,9 @@ public class Game {
 		System.out.println("\r\nCombinaison of Attack :");
 		String attaq = attack.proposition();
 		logger.info("Combinaison d'attaque saisie");
+		System.out.println(sizeCombi);
+		System.out.println(nbrEssai);
+		System.out.println(devMode);
 
 		if (!devMode) {
 			System.out.println("\r\nDeveloper mode not activated");
