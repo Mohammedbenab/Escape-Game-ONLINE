@@ -32,11 +32,11 @@ public class Game {
 	 *                 voire la solution du joueur.
 	 * 
 	 * @param devMode  valeur de la clé pDevMode récupérée dans le fichier
-	 *                 config.properties.
+	 *                 config.properties. Permet d'activer le mode développeur
 	 * @param nbrEssai valeur de la clé pNbrEssai récupérée dans le fichier
-	 *                 config.properties.
-	 * @param pass     valeur de la clé pPass récupérée dans le fichier
-	 *                 config.properties.
+	 *                 config.properties. Correspond au nombre d'essai possible.
+	 * @param sizeCombi     valeur de la clé pCombiSize récupérée dans le fichier
+	 *                 config.properties. Correspond a la taille de la combinaison.
 	 */
 	private IAttack attack;
 	private IDefend defender;
