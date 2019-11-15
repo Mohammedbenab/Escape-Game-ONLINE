@@ -15,7 +15,7 @@
 <p>Une fois le projet sur votre ordianateur, placez-vous au niveau du dossier src/.
 Après cela, compilé grace à la commande suivante:</p>
 
-`javac fr/benab/projet1/game/Main.java`
+`javac -cp "/../monProjet;/../.jar" fr/benab/projet1/game/*.java`
 
 ## Pour lancer le programme ##
 
@@ -23,4 +23,4 @@ Après cela, compilé grace à la commande suivante:</p>
 
 <p>Enfin, lancer le fichier Main pour commancer le programme avec la commande suivante:</p>
 
-`java fr.benab.projet1.game.Main`
+`java -cp "../monProjet;../.jar" fr.benab.projet1.game.Main`
