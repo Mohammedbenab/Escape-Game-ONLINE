@@ -39,7 +39,7 @@ public class PropertyValues {
 	/**
 	 * La méthode getCombiSize() permet de recupérer la taille attrubiée à la combinaison
 	 * dasn le fichier config.properties
-	 * @param val est initialisé par defaut, si le fichier properties n'existe ou lève une exception
+	 * @param val est initialisé par defaut, si le fichier properties n'existe pas ou lève une exception
 	 * @return la taille de la combinaison
 	 */
 	public String getCombiSize(){
