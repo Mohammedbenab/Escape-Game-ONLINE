@@ -1,11 +1,11 @@
-package fr.banab.projet1.game;
+package fr.benab.projet1.game;
 
 import java.util.Scanner;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class GamerMen implements IAttack, IDefend {
+public class GamerMen implements IAttack, IDefend{
 
 	/**
 	 * @param combiSize Valeur de la clé pCombiSize récuperée dans le fichier
@@ -16,7 +16,7 @@ public class GamerMen implements IAttack, IDefend {
 	private static Logger logger = LogManager.getLogger(GamerMen.class);
 	protected PropertyValues value = new PropertyValues();
 
-	private int combiSize = Integer.valueOf(value.getCombiSize());
+	protected int combiSize = Integer.valueOf(value.getCombiSize());
 
 	/**
 	 * @return Une instance de String, et permet de recupérer une combinaison grace

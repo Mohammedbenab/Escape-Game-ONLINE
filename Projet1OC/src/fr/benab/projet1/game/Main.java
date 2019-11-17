@@ -1,4 +1,4 @@
-package fr.banab.projet1.game;
+package fr.benab.projet1.game;
 
 import java.util.Scanner;
 
@@ -55,7 +55,9 @@ public class Main {
 			System.out.println("Game again of same mode ? (Y/N)");
 			String response = sc.nextLine();
 
-			if (response.charAt(0) == 'Y' || response.charAt(0) == 'y') {
+			if ((response.charAt(0) == 'Y' || response.charAt(0) == 'y') && (choice == 3)) {
+				game.multiPlayer();
+			}else if ((response.charAt(0) == 'Y' || response.charAt(0) == 'y') && (choice == 1 || choice == 2)){
 				game.treatment();
 			}
 		}

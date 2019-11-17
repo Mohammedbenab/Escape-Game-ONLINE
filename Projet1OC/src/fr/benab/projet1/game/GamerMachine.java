@@ -1,4 +1,6 @@
-package fr.banab.projet1.game;
+package fr.benab.projet1.game;
+
+import java.io.IOException;
 
 public class GamerMachine implements IAttack, IDefend {
 
@@ -9,7 +11,7 @@ public class GamerMachine implements IAttack, IDefend {
 	 */
 
 	protected PropertyValues value = new PropertyValues();
-	private int combiSize = Integer.valueOf(value.getCombiSize());
+	protected int combiSize = Integer.valueOf(value.getCombiSize());
 
 	/**
 	 * Cette méthode permet de constituer une combinaison secrète.
@@ -18,10 +20,12 @@ public class GamerMachine implements IAttack, IDefend {
 	 *         joueur.
 	 * 
 	 * @param conbiSecret pertmettant de stocker la conbinaison.
+	 * @throws IOException 
+	 * @throws NumberFormatException 
 	 */
 	@Override
-	public String combiSecret() {
-
+	public String combiSecret() throws Exception {
+		//int combiSize = Integer.valueOf(value.getCombiSize());
 		String combiSecret = "";
 		for (int i = 0; i < combiSize; i++) {
 			combiSecret += Integer.toString((int) ((Math.random() * (9 - 0)) + 0));
@@ -34,10 +38,18 @@ public class GamerMachine implements IAttack, IDefend {
 	 * 
 	 * @return Une instance de String, qui correspond à la combinaison d'attaque
 	 *         proposé par le joueur.
+	 * @throws IOException 
+	 * @throws NumberFormatException 
 	 */
 	@Override
-	public String proposition() {
-		return this.combiSecret();
+	public String proposition() throws NumberFormatException, IOException {
+		String prop = null;
+		try {
+			prop = this.combiSecret();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return prop;
 	}
 
 	/**

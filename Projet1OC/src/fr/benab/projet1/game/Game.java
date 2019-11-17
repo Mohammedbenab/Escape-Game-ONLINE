@@ -1,4 +1,4 @@
-package fr.banab.projet1.game;
+package fr.benab.projet1.game;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
