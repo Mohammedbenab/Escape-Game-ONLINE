@@ -42,7 +42,7 @@ public class Test {
 					System.out.println("You have choicen to exit this program");
 					System.out.println("Goodbay !");
 					sc.close();
-					break;
+					System.exit(0);
 				}
 
 				Game game = new Game(choice);
